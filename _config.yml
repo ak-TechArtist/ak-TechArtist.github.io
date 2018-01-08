@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: AK TA Blog
-email: your-email@example.com
+email: 329752742@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
   阿坤的个人博客
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -39,3 +39,9 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+# Siderbar settings
+sidebar: true  #添加侧边栏
+sidebar-about-description: "简单的描述一下你自己"
+sidebar-avatar: /img/avatar-hux.jpg     #你的大头贴，请使用绝对地址.
