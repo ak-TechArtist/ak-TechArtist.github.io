@@ -40,8 +40,7 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-
-# Siderbar settings
-sidebar: true  #添加侧边栏
-sidebar-about-description: "简单的描述一下你自己"
-sidebar-avatar: /img/avatar-hux.jpg     #你的大头贴，请使用绝对地址.
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，多玩玩看看。"
+sidebar-avatar: /image/jump.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
