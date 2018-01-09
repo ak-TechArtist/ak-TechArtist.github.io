@@ -1,7 +1,7 @@
 # Site settings
 title: AK Blog
 SEOTitle: 阿坤的博客 | AK Blog
-header-img: img/home-bg.jpg
+header-img: img/YangMaiYong.jpg
 email: 329752742@qq.com
 description: "阿坤的博客"
 keyword: "阿坤, TA"
@@ -48,7 +48,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: ak-TechArtist
+disqus_username: hux
 
 # Netease setttings
 netease_comment: false
