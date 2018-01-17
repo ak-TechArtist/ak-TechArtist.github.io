@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "各项异性头发效果"
+title:      "写实头发效果"
 subtitle:   ""
 date:       2018-01-17 17:00:00
 author:     "AK"
@@ -12,8 +12,8 @@ tags:
 
 # 一 概览
 ---
-本文讲解了各向异性头发效果的原理，Shader的具体实现，以及部分注意事项。  
-社会你坤哥，人怂话又多，这次先上Demo： [Anisotropic Hair](https://github.com/ak-TechArtist/AnisotropicHair)
+本文讲解了写实头发效果的原理，Shader的具体实现，以及部分注意事项。  
+社会你坤哥，人怂话不多，先上Demo： [Anisotropic Hair](https://github.com/ak-TechArtist/AnisotropicHair)
 
 ![](/img/in-post/Anisotropic-hair-effect/pic1.png)
 <small class="img-hint"></small>
