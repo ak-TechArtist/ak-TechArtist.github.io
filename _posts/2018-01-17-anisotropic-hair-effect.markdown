@@ -2,7 +2,7 @@
 layout:     post
 title:      "各项异性头发效果"
 subtitle:   ""
-date:       2018-01-13 19:04:00
+date:       2018-01-17 17:00:00
 author:     "AK"
 header-img: "img/post-bg.jpg"
 catalog: true
