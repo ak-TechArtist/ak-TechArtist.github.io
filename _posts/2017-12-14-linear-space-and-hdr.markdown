@@ -4,7 +4,7 @@ title:      "深入理解线性空间与HDR"
 subtitle:   ""
 date:       2017-12-14 20:00:02
 author:     "AK"
-header-img: ""
+header-img: "img/post-bg.jpg"
 catalog: true
 tags:
     - Unity

@@ -4,7 +4,7 @@ title:      "阅读实用型书籍的规则"
 subtitle:   ""
 date:       2017-12-17 11:43:00
 author:     "AK"
-header-img: ""
+header-img: "img/post-bg.jpg"
 catalog: true
 tags:
     - Read

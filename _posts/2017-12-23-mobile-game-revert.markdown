@@ -4,7 +4,7 @@ title:      "手游效果逆向分析"
 subtitle:   ""
 date:       2017-12-23 12:00:00
 author:     "AK"
-header-img: ""
+header-img: "img/post-bg.jpg"
 catalog: true
 tags:
     - Unity
