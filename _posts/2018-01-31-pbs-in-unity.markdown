@@ -73,8 +73,8 @@ PBS能实现更好的法线高光效果：
 <small class="img-hint"></small>
 
 # 四 参考资料
-> Demo源于[Viking Viilage](https://assetstore.unity.com/packages/essentials/tutorial-projects/viking-village-29140)
-> Viking Village相关[Blog](https://blogs.unity3d.com/cn/2015/02/18/working-with-physically-based-shading-a-practical-approach/)
+> Demo源于[Viking Viilage](https://assetstore.unity.com/packages/essentials/tutorial-projects/viking-village-29140)  
+> Viking Village相关[Blog](https://blogs.unity3d.com/cn/2015/02/18/working-with-physically-based-shading-a-practical-approach/)  
 >Standard Shader的表格可以在[这里](https://assetstore.unity.com/packages/essentials/tutorial-projects/shader-calibration-scene-25422)找到
 
 
