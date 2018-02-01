@@ -13,6 +13,7 @@ tags:
 本文旨在梳理Unity中PBS的应用流程：首先介绍了何为PBS，它相对传统渲染的优势，以及Unity对PBS的实现，最后以一个Demo为例简要说明了Unity中PBS的具体使用。
 
 # 一 什么是PBS
+---
 从字面意思来看，是基于物理的渲染技术（Physically Based Shading）。其实可以将其理解为一种光照模型，类似Lambert 或 Phong，只是更贴合现实，因为其高消耗，在最近的实时渲染中才成为可能。  
 PBS能实现更好的法线高光效果：
 
@@ -25,6 +26,7 @@ PBS能实现更好的法线高光效果：
 <small class="img-hint"></small>
 
 # 二 Unity对PBS的实现
+---
 自Unity5开始，官方的Standard Shader就吸收了PBS光照模型，其是一个众多属性的集合，通过设置贴图和参数，可以启用或者禁用其中的一些属性。  
 具体使用可参见 [Unity Maunal](https://docs.unity3d.com/Manual/shader-StandardShader.html)
 
@@ -32,6 +34,7 @@ PBS能实现更好的法线高光效果：
 <small class="img-hint"></small>
 
 # 三 Unity中PBS的具体使用
+---
 ![](/img/in-post/pbs-in-unity/3.png)
 <small class="img-hint"></small>
 
@@ -73,6 +76,7 @@ PBS能实现更好的法线高光效果：
 <small class="img-hint"></small>
 
 # 四 参考资料
+---
 > Demo源于[Viking Viilage](https://assetstore.unity.com/packages/essentials/tutorial-projects/viking-village-29140)  
 > Viking Village相关[Blog](https://blogs.unity3d.com/cn/2015/02/18/working-with-physically-based-shading-a-practical-approach/)  
 >Standard Shader的表格可以在[这里](https://assetstore.unity.com/packages/essentials/tutorial-projects/shader-calibration-scene-25422)找到
