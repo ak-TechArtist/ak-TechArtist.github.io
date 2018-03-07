@@ -67,7 +67,7 @@ netease_comment: false
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "积跬步，至千里，<br>知言行合一"
+sidebar-about-description: "前程序，现技美。对计算机图形学 & 艺术表现感兴趣。<br>邮箱：329752742@qq.com"
 sidebar-avatar: /img/avatar-ak.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
