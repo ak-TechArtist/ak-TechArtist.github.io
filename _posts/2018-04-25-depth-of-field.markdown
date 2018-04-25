@@ -34,7 +34,8 @@ GPUs不需要对焦，它们表现得就像完美的拥有无数焦点的摄像�
 ##### 1 设置场景
 为了测试景深效果，我们创建一个包含不同距离物体的场景。一个10x10颜色丰富的平面打底，放置了许多物体在其之上，且设置了4个悬空物体靠近摄像机，你可以通过文后的链接下载此示例场景，或者制作你自己的场景。
 
-![示例场景](https://upload-images.jianshu.io/upload_images/9476896-eeab63b0eb8ec41c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](/img/in-post/depth-of-field/1.jpg)
+<small class="img-hint">示例场景</small>
 
 首先，我们创建一个名为DepthOfField的shader
 ```
