@@ -13,11 +13,11 @@ tags:
 [原文](http://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/)是Catlike写的一篇教程。这也是我第一次尝试翻译技术文章，比想象中的要累不少- -！
 
 # 景深效果（Depth of Field）
-> 实现此效果的步骤为：
-决定模糊圈（CoC）   
-创建焦外效果（bokeh）  
-对焦图片以及取消对焦  
-分离及融合前景、后景  
+> 实现此效果的步骤为：  
+1 决定模糊圈（CoC）   
+2 创建焦外效果（bokeh）  
+3 对焦图片以及取消对焦  
+4 分离及融合前景、后景  
 
 此课程演示了如何创建一个景深的屏幕后处理效果，其是继[Bloom](http://catlikecoding.com/unity/tutorials/advanced-rendering/bloom/)之后的又一课程。
 此课程使用unity 2017.3.0p3制作。
