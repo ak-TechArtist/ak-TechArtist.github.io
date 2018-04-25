@@ -10,7 +10,8 @@ tags:
     - Unity
 ---
 
-[原文](http://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/)是Catlike写的一篇教程。这也是我第一次尝试翻译技术文章，比想象中的要累不少- -！
+Catlike大神写的一篇教程，也是我第一次尝试翻译技术文章，比想象中的要累不少- -！  
+感觉在可读性上还有较大的改进空间，如果遇到理解起来比较困难的地方请参看[原文](http://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/)
 
 # 景深效果（Depth of Field）
 > 实现此效果的步骤为：  
