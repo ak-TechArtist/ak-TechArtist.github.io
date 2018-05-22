@@ -14,7 +14,7 @@ tags:
 
 先看一下最终的效果：
 
-![](/img/in-post/next-gen-art/gif1.png)
+![](/img/in-post/next-gen-art/gif1.gif)
 <small class="img-hint">挥手</small>
 
 实现此效果的步骤为：
@@ -30,7 +30,7 @@ tags:
 # 一 在3dsMax中创建模型
 由简单的球形 + 圆柱体组成：
 
-![](/img/in-post/next-gen-art/pic1.gif)
+![](/img/in-post/next-gen-art/pic1.png)
 <small class="img-hint">attach之后的模型</small>
 
 # 二 为模型建立骨骼并蒙皮、调整蒙皮权重
@@ -41,13 +41,13 @@ tags:
 # 三 制作骨骼动画
 旋转上臂K了两帧，循环播放，即为重复挥手
 
-![](/img/in-post/next-gen-art/gif2.png)
+![](/img/in-post/next-gen-art/gif2.gif)
 <small class="img-hint">K了两帧</small>
 
 # 四 展UV
 由于我们只在身体上绘制字母，所以将此部分的面积放大，以便操作
 
-![](/img/in-post/next-gen-art/pic3.gif)
+![](/img/in-post/next-gen-art/pic3.png)
 <small class="img-hint">平铺各部分UV</small>
 
 # 五 利用ZBrush雕刻高模细节
