@@ -32,7 +32,6 @@ tags:
 ![](/img/in-post/game-engine-architecture/3.png)
 <small class="img-hint">运行时游戏架构</small>
 
-![工具及资产管理通道](https://upload-images.jianshu.io/upload_images/9476896-cef170ce3b0d9774.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](/img/in-post/game-engine-architecture/4.png)
 <small class="img-hint">工具及资产管理通道</small>
 
