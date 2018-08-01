@@ -74,7 +74,7 @@ tags:
 
 # 五 获取资源
 接下来需要获取游戏相关的资源：
-###1 贴图
+### 1 贴图
 贴图很好获取，直接在Profiler中保存即可：
 ![](/img/in-post/mobile-game-effect-snapdragon/12.png)
 <small class="img-hint">保存贴图</small>
