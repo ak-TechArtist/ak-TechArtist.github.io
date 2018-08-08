@@ -19,7 +19,7 @@ tags:
 
 
 ![](/img/in-post/harvard-positive-phsychology/1.png)
-<small class="img-hint">十五章内容</small>
+<small class="img-hint">十章内容</small>
 
 # 一 简介
 Tal（本课老师）首先介绍了这门课的起源，是什么不是什么，以及为什么是积极心理学，而不是别的什么东西。
@@ -72,33 +72,42 @@ Tal从自身的例子谈到完美主义，再谈到社会中的许多现象、�
 <small class="img-hint">现象、定义及特征</small>
 
 ![](/img/in-post/harvard-positive-phsychology/11.png)
-<small class="img-hint">后果、根源及克服</small>
+<small class="img-hint">造成的后果</small>
+
+![](/img/in-post/harvard-positive-phsychology/12.png)
+<small class="img-hint">产生的根源及克服</small>
 
 # 八 健康
 一开始就给出了幸福的神奇药品，并对它们的重要性、原理和操作方法进行了说明。
 
-![](/img/in-post/harvard-positive-phsychology/12.png)
-<small class="img-hint">鸡尾酒及其构成</small>
+![](/img/in-post/harvard-positive-phsychology/13.png)
+<small class="img-hint">鸡尾酒及其第一部分</small>
+
+![](/img/in-post/harvard-positive-phsychology/14.png)
+<small class="img-hint">鸡尾酒后三部分</small>
 
 # 九 人际关系
 以爱情为代表讲了人际关系的现状，然后以积极心理学的角度来增强之。
 
-![](/img/in-post/harvard-positive-phsychology/13.png)
-<small class="img-hint">重要的人际关系及其现状</small>
-
-![](/img/in-post/harvard-positive-phsychology/14.png)
-<small class="img-hint">积极心理学下的解决办法1</small>
-
 ![](/img/in-post/harvard-positive-phsychology/15.png)
-<small class="img-hint">积极心理学下的解决办法2</small>
+<small class="img-hint">人际关系的重要性及其现状</small>
+
+![](/img/in-post/harvard-positive-phsychology/16.png)
+<small class="img-hint">积极心理学下的部分解决办法</small>
+
+![](/img/in-post/harvard-positive-phsychology/17.png)
+<small class="img-hint">允许冲突</small>
+
+![](/img/in-post/harvard-positive-phsychology/18.png)
+<small class="img-hint">欣赏优点及总结</small>
 
 # 十 自尊
 Tal从自身经历出发，谈了自尊的定义及其重要性，它的细分模型，以及我们如何来提高自尊。
 
-![](/img/in-post/harvard-positive-phsychology/16.png)
+![](/img/in-post/harvard-positive-phsychology/19.png)
 <small class="img-hint">自尊1</small>
 
-![](/img/in-post/harvard-positive-phsychology/17.png)
+![](/img/in-post/harvard-positive-phsychology/20.png)
 <small class="img-hint">自尊2</small>
 
 
