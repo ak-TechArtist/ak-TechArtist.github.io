@@ -41,8 +41,8 @@ TerrainDetailMesh使用的是Unity自带的Shader，而场景内模型草希望�
 <small class="img-hint">大小和朝向都是一致的</small>
 
 其次是用T2M插件导出来的模型大小、朝向和原来的不一致：  
-![可以看到本来很小的花占满了整个屏幕，朝向也有变化](/img/in-post/terrain-export-model/4.png)
-<small class="img-hint"></small>
+![](/img/in-post/terrain-export-model/4.png)
+<small class="img-hint">可以看到本来很小的花占满了整个屏幕，朝向也有变化</small>
 
 用Unity自带的资源试试呢？  
 不仅能体现差异性，通过T2M插件导出也是所见即所得的：  
