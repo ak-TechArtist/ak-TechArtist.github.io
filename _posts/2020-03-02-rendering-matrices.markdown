@@ -255,7 +255,7 @@ public class RotationTransformation : Transformation {
 # 3 全方位旋转
 目前我们仅能绕Z轴旋转，为和Unity的transform组件一样，我们还需要实现X和Y轴的旋转。单独来看，这和绕Z轴旋转类似，但要组合到一起就变得麻烦了。为解决此问题，我们需要用一个更好的数学方法来表示。
 ### 3.1 矩阵
-从现在开始，我们将点的坐标由横向变为纵向。将用$\begin{bmatrix}x\\y \end{bmatrix}$来表示(x,y)，用$
+从现在开始，我们将点的坐标由横向变为纵向。将用$\begin{bmatrix}x\\y\end{bmatrix}$来表示(x,y)，用$
 \begin{bmatrix}
 xcosZ - ysiznZ\\xsinZ + ycosZ 
 \end{bmatrix}$来表示(xcosZ - ysiznZ,xsinZ + ycosZ )，这样读起来更容易些。
