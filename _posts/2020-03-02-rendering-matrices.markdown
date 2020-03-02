@@ -23,7 +23,7 @@ tags:
 本课使用的Unity版本为5.3.1
 ![](/img/in-post/rendering-matrices/1.png)
 <small class="img-hint">调整空间中点的位置</small>
-#1 可视化空间
+# 1 可视化空间
 你现在已经知道网格是什么及它们如何在场景中定位了。但是这个定位到底是如何实现的？shader怎么知道将物体绘制在什么地方？当然，我们可以交给Unity的transform组件及shader实现，但若想对此过程有所掌控，则明白其原理是至关重要的。为理解得透彻，最好是由我们自己来实现。  
 网格的移动、旋转和缩放是通过改变顶点位置实现的。这涉及到空间变换，为明白其中原理，我们先要让其变得可见。可通过创建一个3D点的网格来实现，网格的点可由任意Prefab充当。 
 
@@ -48,7 +48,7 @@ public class TransformationGrid : MonoBehaviour {
 	}
 }
 ```
->问：为什么不使用粒子来可视化这些点？
+>问：为什么不使用粒子来可视化这些点？ 
 答：当然可以，只是我觉得粒子系统更适合放在其他单独的主题里。
 
 创建一个点的步骤可分为实例化预制件、设置坐标、赋值一个特殊的颜色。 
@@ -87,7 +87,7 @@ public class TransformationGrid : MonoBehaviour {
 [unitypackage下载](https://catlikecoding.com/unity/tutorials/rendering/part-1/visualizing-space/visualizing-space.unitypackage)
 
 
-#2 变换
+# 2 变换
 理想情况下，我们可以为这个网格添加任意数量的多种形式变换。但目前让我们仅局限于位移、旋转和缩放上。 
 如果我们能为每种变换创建一个脚本，那么就可以按任意顺序和数量变换网格了。不过每种变化的细节不一样，所以需要一个具体的方法去变换每个网格中的点。 
 创建一个所有变换的父类。这是一个无法直接使用的抽象类。同时添加Apply方法，使得子类可以自定义具体的实现。
@@ -126,10 +126,10 @@ public class TransformationGrid : MonoBehaviour {
 		}
 	}
 ```
->问：为何每帧都获取组件？
+>问：为何每帧都获取组件？ 
 答：这可以使我们在运行时也能修改变换组件，并立即看到结果。
 
->问：为何使用链表而非数组？
+>问：为何使用链表而非数组？ 
 答：最直接的GetComponents方法会直接返回一个该类型的数组。这意味着每次调用都会创建一个新的数组，而我们又在每帧调用。更合适的办法是使用一个链表参数，会将获取的组件放入链表中，而非创建一个新的数组。
 在本例中这并非一个至关重要的问题，但如果经常获取组件的话，用链表作为参数是一个不错的习惯。
 
@@ -145,7 +145,7 @@ public class TransformationGrid : MonoBehaviour {
 	}
 ```
 
-###2.1 移动
+### 2.1 移动
 首先要实现的是位移变换，它似乎是最简单的了。新建一个继承自Transformation的子类，添加一个用于位移的变量。
 ```
 public class PositionTransformation : Transformation {
@@ -165,7 +165,7 @@ public class PositionTransformation : Transformation {
 ![位置变换](https://upload-images.jianshu.io/upload_images/9476896-78ffd57a6258943b.gif?imageMogr2/auto-orient/strip)
 
 
-###2.2 缩放
+### 2.2 缩放
 缩放和位移类似，不过是相乘，而非相加。
 ```
 using UnityEngine;
@@ -192,7 +192,7 @@ public class ScaleTransformation : Transformation {
 
 ![调整组件位置](https://upload-images.jianshu.io/upload_images/9476896-e508fa97990f4990.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-###2.3 旋转
+### 2.3 旋转
 第三部分是旋转，这要比前两部分难一些。新建一个旋转组件，暂时仅返回点的位置。
 ```
 using UnityEngine;
@@ -234,7 +234,7 @@ public class RotationTransformation : Transformation {
 	}
 ```
 
->问：为什么是弧度？
+>问：为什么是弧度？ 
 答：和角度一样，弧度也可以度量旋转。在单位圆上，弧度和点在周长上移动的距离相符。一个圆的周长为2π乘以半径，所以1个弧度等于π/180角度。
 注意，这里π的定义为圆周与直径的比率。
 
@@ -252,9 +252,9 @@ public class RotationTransformation : Transformation {
 ![三种变换的组合](https://upload-images.jianshu.io/upload_images/9476896-4309a13fd5239f40.gif?imageMogr2/auto-orient/strip)
 [unitypackage下载](https://catlikecoding.com/unity/tutorials/rendering/part-1/transformations/transformations.unitypackage)
 
-#3 全方位旋转
+# 3 全方位旋转
 目前我们仅能绕Z轴旋转，为和Unity的transform组件一样，我们还需要实现X和Y轴的旋转。单独来看，这和绕Z轴旋转类似，但要组合到一起就变得麻烦了。为解决此问题，我们需要用一个更好的数学方法来表示。
-###3.1 矩阵
+### 3.1 矩阵
 从现在开始，我们将点的坐标由横向变为纵向。将用$\begin{bmatrix}x\\y \end{bmatrix}$来表示(x,y)，用$
 \begin{bmatrix}
 xcosZ - ysiznZ\\xsinZ + ycosZ 
@@ -267,7 +267,7 @@ cosZ - sinZ\\sinZ + cosZ
 通常来讲，矩阵相乘时，第一个矩阵是按行的顺序乘以第二个矩阵的列。最终结果为元素相乘之和，这意味着第一个矩阵的列数需要与第二个矩阵的行数一致。
 ![2x2矩阵相乘](https://upload-images.jianshu.io/upload_images/9476896-3a71e98c5b955d23.png)
 结果矩阵的第一行包含 行1 x 列1，行1 x 列2等。第二行包含 行2 x 列2，行2 x 列2等。因此，结果矩阵和第一个矩阵有相同的行数，与第二个矩阵有相同的列数。
-###3.2 三维旋转矩阵
+### 3.2 三维旋转矩阵
 可以用一个2x2的矩阵来表示绕Z轴的二维旋转，但处理的是一个三维的点。而$
 \begin{bmatrix}
 cosZ - sinZ\\ sinZ + cosZ 
@@ -318,7 +318,7 @@ x\\y\\z
 x\\y\\z 
 \end{bmatrix}
 $
-###3.3 X和Y轴的旋转矩阵
+### 3.3 X和Y轴的旋转矩阵
 和绕Z轴旋转类似，我们可以找到一个绕Y轴旋转的矩阵。首先，X轴自$
 \begin{bmatrix}
 1\\0\\0 
@@ -340,7 +340,7 @@ cosY&0&sinY\\0&1&0\\-sinY&0&cosY
 \begin{bmatrix}
 1&0&0\\0&cosX&-sinX\\ 0&sinX&cosX 
 \end{bmatrix}$。
-###3.4 整合三维旋转矩阵
+### 3.4 整合三维旋转矩阵
 我们有了三个绕单轴旋转的矩阵，可以通过一个个轴旋转来整合它们。例如ZYX的顺序：先绕Z轴旋转点，然后是Y轴，最后是X轴。
 或者，也可以将这三个矩阵相乘来生成一个新的矩阵，同时绕三个轴旋转。让我们先整合Y x Z。
 第一个元素的值为 cosYcosZ - 0sinZ - 0sinY = cosYcosZ。要得出结果，会有大量的乘法运算，不过许多部分都是0，可以舍弃掉。
@@ -396,7 +396,7 @@ cosXsinZ+sinXsinYcosZ&cosXcosZ-sinXsinYsinZ&-sinXcosY\\
 
 [unitypackage下载](https://catlikecoding.com/unity/tutorials/rendering/part-1/full-rotations/full-rotations.unitypackage)
 
-#4 矩阵变换
+# 4 矩阵变换
 如果我们能组合三维旋转到一个矩阵，是否能将缩放、旋转、位移也组合起来呢？若能通过矩阵的形式表示缩放和位移的话，这就是可行的。
 缩放矩阵可以直接构建，修改单位矩阵的元素即可。
 $\begin{bmatrix}
@@ -432,7 +432,7 @@ x\\y\\z\\1
 x+2\\y+3\\z+4\\1
 \end{bmatrix}$
 所以，我们必须使用一个4x4的矩阵。这意味着表示缩放和旋转的矩阵增加了一行(0,0,0,1)。点也获得了第四个值为1的坐标。
-###4.1 齐次坐标
+### 4.1 齐次坐标
 第四个坐标到底有什么意义？它代表了什么？如果其值为1则表示位移，若值为0则不可位移，不过缩放和旋转仍然有效。
 而能被缩放和旋转却不能移动，这不是点，而是向量，它代表了方向。
 所以$\begin{bmatrix}
@@ -477,7 +477,7 @@ x\\y\\z\\w
 \frac{x}{w}\\\frac{y}{w}\\ \frac{z}{w}
 \end{bmatrix}$
 显然，当第四个坐标为0时这是不生效的。因为除以0意为无穷大，这也是为什么它们表现得像向量的原因了。
-###4.2 使用矩阵
+### 4.2 使用矩阵
 从现在开始，我们将使用Unity的Matrix4x4结构体来执行矩阵乘法。
 添加一个只读的虚属性到Transformation类中以获取变换矩阵。
 ```
@@ -555,7 +555,7 @@ Apply也不再是虚方法，它将执行矩阵乘法。
 		}
 	}
 ```
-###4.3 组合矩阵
+### 4.3 组合矩阵
 现在可以将变换矩阵组合为一个了，在TransformationGrid中添加一个名为transformation的矩阵变量。
 ```
 	Matrix4x4 transformation;
@@ -591,7 +591,7 @@ Apply也不再是虚方法，它将执行矩阵乘法。
 
 [unitypackage下载](https://catlikecoding.com/unity/tutorials/rendering/part-1/matrix-transformations/matrix-transformations.unitypackage)
 
-#5 投影矩阵
+# 5 投影矩阵
 目前为止，我们已经实现将一个三维坐标变换到另一个三维坐标。但它们是怎么显示成二维的？这需要一个三维空间到二维空间的变换。
 为投影创建一个具体的变换组件，先设置矩阵为单位矩阵。
 ```
@@ -613,7 +613,7 @@ public class CameraTransformation : Transformation {
 ```
 添加到变换组件的末尾。
 ![相机投影放在最后](https://upload-images.jianshu.io/upload_images/9476896-ee8bff8a2ba61ab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-###5.1 正交相机
+### 5.1 正交相机
 最直接的三维转二维方式是舍弃一个维度，三维空间将塌陷为一个平面。这个平面看起来就像一个绘制场景的画布。让我们试试舍弃Z维。
 $\begin{bmatrix}
 1&0&0&0\\0&1&0&0\\0&0&0&0\\0&0&0&1
@@ -633,7 +633,7 @@ $\begin{bmatrix}
 
 初始相机在原点，朝向Z轴的正方向。能否移动或旋转它？答案是可以的。在视觉上，移动相机和反向移动整个世界是一样的。旋转和缩放也是如此。虽然这有些不便，但我们是可以用现有的矩阵去移动相机的。在Unity中这是用逆矩阵来实现的。
 
-###5.2 透视相机
+### 5.2 透视相机
 但正交相机并不能如实地反映我们看到的世界，透视相机却可以，它会让距离较远的物体显得更小。我们能通过缩放点到摄像机的距离来实现此效果。 
 让我们用Z坐标值来除以XY坐标。这能通过将矩阵最后一行改为(0,0,1,0)来实现。使坐标的第四个值等于原始的Z值。在由齐次坐标转向欧拉坐标时，就可以相除了。
 $\begin{bmatrix}
