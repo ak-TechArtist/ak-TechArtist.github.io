@@ -81,7 +81,7 @@ public class TransformationGrid : MonoBehaviour {
 
 创建一个空物体，添加脚本，并赋值cube预制体。运行游戏，一个中心在原点的正方体网格就出现啦。
 
-| ![空物体](https://upload-images.jianshu.io/upload_images/9476896-2ef54144bca99185.png)| ![正方形网格](https://upload-images.jianshu.io/upload_images/9476896-25a32ab6371ac8b3.png) |
+| ![空物体](https://upload-images.jianshu.io/upload_images/9476896-2ef54144bca99185.png) | ![正方形网格](https://upload-images.jianshu.io/upload_images/9476896-25a32ab6371ac8b3.png) |
 |:-|:-|
 
 [unitypackage下载](https://catlikecoding.com/unity/tutorials/rendering/part-1/visualizing-space/visualizing-space.unitypackage)
