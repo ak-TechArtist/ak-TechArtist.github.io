@@ -77,11 +77,12 @@ public class TransformationGrid : MonoBehaviour {
 	}
 ```
 我将使用一个默认的cube预制体作为网格中的点，缩小一半大小，这样Cube间能有间隔。  
-![cube 预制体](https://upload-images.jianshu.io/upload_images/9476896-4cd6f25e0badf80f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![cube 预制体](https://upload-images.jianshu.io/upload_images/9476896-4cd6f25e0badf80f.png)
 
 创建一个空物体，添加脚本，并赋值cube预制体。运行游戏，一个中心在原点的正方体网格就出现啦。
 
 ![空物体](https://upload-images.jianshu.io/upload_images/9476896-2ef54144bca99185.png) 
+
 ![正方形网格](https://upload-images.jianshu.io/upload_images/9476896-25a32ab6371ac8b3.png)
 
 
@@ -161,9 +162,9 @@ public class PositionTransformation : Transformation {
 	}
 ```
 给我们的网格物体添加移动组件，可以移动网格中每个点的位置。这样的变换发生在网格的物体坐标系中。
-![](https://upload-images.jianshu.io/upload_images/9476896-b22b666fc70f8d31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/9476896-b22b666fc70f8d31.png)
 
-![位置变换](https://upload-images.jianshu.io/upload_images/9476896-78ffd57a6258943b.gif?imageMogr2/auto-orient/strip)
+![位置变换](https://upload-images.jianshu.io/upload_images/9476896-78ffd57a6258943b.gif)
 
 
 ### 2.2 缩放
@@ -185,13 +186,13 @@ public class ScaleTransformation : Transformation {
 ```
 添加此组件，就可以缩放网格了。注意，我们仅是更改了网格点的位置，所以单个点的大小并不会变化。
 
-![](https://upload-images.jianshu.io/upload_images/9476896-07020b2efacc0dea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/9476896-07020b2efacc0dea.png)
 
-![调整缩放](https://upload-images.jianshu.io/upload_images/9476896-36db82c61cc55cf3.gif?imageMogr2/auto-orient/strip)
+![调整缩放](https://upload-images.jianshu.io/upload_images/9476896-36db82c61cc55cf3.gif)
 
 尝试同时位移和缩放，你会发现缩放也会影响点的位置。这是因为我们是先位移再缩放的。而Unity则相反，调整两个组件的位置，让缩放位于位移上方。
 
-![调整组件位置](https://upload-images.jianshu.io/upload_images/9476896-e508fa97990f4990.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![调整组件位置](https://upload-images.jianshu.io/upload_images/9476896-e508fa97990f4990.png)
 
 ### 2.3 旋转
 第三部分是旋转，这要比前两部分难一些。新建一个旋转组件，暂时仅返回点的位置。
@@ -209,18 +210,18 @@ public class RotationTransformation : Transformation {
 ```
 旋转的原理是什么？让我们先从只绕Z轴旋转开始。绕一个轴旋转就像是滚动一个车轮。因为Unity采用的是左手坐标系，在朝向Z轴正方向看时，一个正数的旋转会让车轮逆时针运动。
 
-![绕Z轴的二维旋转](https://upload-images.jianshu.io/upload_images/9476896-2d43a564f20bcca5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![绕Z轴的二维旋转](https://upload-images.jianshu.io/upload_images/9476896-2d43a564f20bcca5.png)
 
 接下来想一下旋转时点的坐标发生了什么变化？最简单的方法是想象点都在一个半径为1的圆（单位圆）上。而X轴和Y轴与圆有两个交点，如果我们按90°旋转，则这两个交点的坐标将由0,1,-1这三个数组成。
 
-![90°和180°旋转(1,0)与(0,1) ](https://upload-images.jianshu.io/upload_images/9476896-4fdc806e3d4c8d3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![90°和180°旋转(1,0)与(0,1) ](https://upload-images.jianshu.io/upload_images/9476896-4fdc806e3d4c8d3d.png)
 
 第一次旋转90°，(1,0)变成了(0,1)，接着是(-1,0)，然后是(0,-1)，最后变回(1,0)。
 如果从(0,1)开始，则循环更早一步。从(0,1)到(-1,0)到(0,-1)到(1,0)，然后回到起始点。
 所以，坐标在0,1,0,-1这几个数字上循环，他们只是拥有不同的起始数字罢了。
 
 如果按45°旋转呢？那会增加XY平面对角线上的点。因为距离原点的距离没有改变，所以点坐标将取于（$\pm\sqrt{1/2} $,$\pm\sqrt{1/2} $）。这就扩展我们的循环为0，$\sqrt{1/2} $，1，$\sqrt{1/2} $，0，$-\sqrt{1/2} $，-1，$-\sqrt{1/2} $了。继续缩小旋转的度数幅度，就会得到一个正弦曲线。
-![正弦和余弦](https://upload-images.jianshu.io/upload_images/9476896-0221fa9dbe1612cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![正弦和余弦](https://upload-images.jianshu.io/upload_images/9476896-0221fa9dbe1612cb.png)
 
 在我们的例子中，正弦曲线对应了从(1,0)开始的y值变化，余弦曲线则对应其x值变化。这意味着我们可以重定义(1,0)为(cos z, sin z)。相应的，(0,1)可被(-sin z, cos z)替代。
 让我们先算出绕Z轴旋转的正弦和余弦值。因为正弦和余弦函数需要提供弧度参数，所以需要先转换角度为弧度。
@@ -248,9 +249,10 @@ public class RotationTransformation : Transformation {
 		);
 ```
 添加一个旋转组件给网格物体，并放在变换中间。这意味着会先缩放，再旋转，最后位移，这和Unity的变换顺序是一样的。目前我们只能绕Z轴旋转，另外两个轴的旋转将在后面加入。
-![](https://upload-images.jianshu.io/upload_images/9476896-fa71b123d5ac1700.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/9476896-fa71b123d5ac1700.png)
 
-![三种变换的组合](https://upload-images.jianshu.io/upload_images/9476896-4309a13fd5239f40.gif?imageMogr2/auto-orient/strip)
+![三种变换的组合](https://upload-images.jianshu.io/upload_images/9476896-4309a13fd5239f40.gif)
+
 [unitypackage下载](https://catlikecoding.com/unity/tutorials/rendering/part-1/transformations/transformations.unitypackage)
 
 # 3 全方位旋转
@@ -393,7 +395,7 @@ cosXsinZ+sinXsinYcosZ&cosXcosZ-sinXsinYsinZ&-sinXcosY\\
 		return xAxis * point.x + yAxis * point.y + zAxis * point.z;
 	}
 ```
-![绕三个轴旋转](https://upload-images.jianshu.io/upload_images/9476896-ca4315566909bcfd.gif?imageMogr2/auto-orient/strip)
+![绕三个轴旋转](https://upload-images.jianshu.io/upload_images/9476896-ca4315566909bcfd.gif)
 
 [unitypackage下载](https://catlikecoding.com/unity/tutorials/rendering/part-1/full-rotations/full-rotations.unitypackage)
 
@@ -692,7 +694,7 @@ $
 			matrix.SetRow(2, new Vector4(0f, 0f, 0f, 0f));
 			matrix.SetRow(3, new Vector4(0f, 0f, 1f, 0f));
 ```
-![调整焦距](https://upload-images.jianshu.io/upload_images/9476896-4376aa9a024bfe9d.gif?imageMogr2/auto-orient/strip)
+![调整焦距](https://upload-images.jianshu.io/upload_images/9476896-4376aa9a024bfe9d.gif)
 
 现在我们已经实现了一个很简单的投影摄像机。如果需要全面模拟Unity的摄像机投影，则还需要定义远近平面。这要求投影到一个立方体中，而非一个平面上，深度信息得以保留。接下来还要考虑视口的横纵比。同时，Unity的摄像机是朝向Z轴负方向的，这需要一些负值。如果你想的话，可以尝试将它们都统一到投影矩阵中。
 其实我们很少需要去定义矩阵以及投影矩阵，那以上内容到底有啥意义？其作用在于明白背后的过程：矩阵不过是将点和向量从一个空间转到另一个。而在后续的课程，我们在写自己的shader时，还会遇到它们。这将在第二部分，shader基础中涉及。
