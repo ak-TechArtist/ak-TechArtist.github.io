@@ -613,7 +613,7 @@ public class CameraTransformation : Transformation {
 }
 ```
 添加到变换组件的末尾。
-![相机投影放在最后](https://upload-images.jianshu.io/upload_images/9476896-ee8bff8a2ba61ab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![相机投影放在最后](https://upload-images.jianshu.io/upload_images/9476896-ee8bff8a2ba61ab5.png)
 ### 5.1 正交相机
 最直接的三维转二维方式是舍弃一个维度，三维空间将塌陷为一个平面。这个平面看起来就像一个绘制场景的画布。让我们试试舍弃Z维。
 $\begin{bmatrix}
