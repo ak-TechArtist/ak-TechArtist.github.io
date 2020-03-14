@@ -81,8 +81,9 @@ public class TransformationGrid : MonoBehaviour {
 
 创建一个空物体，添加脚本，并赋值cube预制体。运行游戏，一个中心在原点的正方体网格就出现啦。
 
-| ![空物体](https://upload-images.jianshu.io/upload_images/9476896-2ef54144bca99185.png) | ![正方形网格](https://upload-images.jianshu.io/upload_images/9476896-25a32ab6371ac8b3.png) |
-|:-|:-|
+![空物体](https://upload-images.jianshu.io/upload_images/9476896-2ef54144bca99185.png) 
+![正方形网格](https://upload-images.jianshu.io/upload_images/9476896-25a32ab6371ac8b3.png)
+
 
 [unitypackage下载](https://catlikecoding.com/unity/tutorials/rendering/part-1/visualizing-space/visualizing-space.unitypackage)
 
@@ -263,7 +264,7 @@ x和y在竖排的列中显示，如果用某个值乘以$\begin{bmatrix}x\\y \en
 \begin{bmatrix}
 cosZ - sinZ\\sinZ + cosZ 
 \end{bmatrix}\begin{bmatrix}x\\y \end{bmatrix}$。这是一个矩阵乘法，2x2矩阵的第一列表示X轴，第二列表示Y轴。
-![用二维矩阵表示X和Y轴](https://upload-images.jianshu.io/upload_images/9476896-a59094e78fde7787.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![用二维矩阵表示X和Y轴](https://upload-images.jianshu.io/upload_images/9476896-a59094e78fde7787.png)
 通常来讲，矩阵相乘时，第一个矩阵是按行的顺序乘以第二个矩阵的列。最终结果为元素相乘之和，这意味着第一个矩阵的列数需要与第二个矩阵的行数一致。
 ![2x2矩阵相乘](https://upload-images.jianshu.io/upload_images/9476896-3a71e98c5b955d23.png)
 结果矩阵的第一行包含 行1 x 列1，行1 x 列2等。第二行包含 行2 x 列2，行2 x 列2等。因此，结果矩阵和第一个矩阵有相同的行数，与第二个矩阵有相同的列数。
@@ -625,8 +626,9 @@ $\begin{bmatrix}
 			matrix.SetRow(3, new Vector4(0f, 0f, 0, 1f));
 ```
 
-| ![正交投影](https://upload-images.jianshu.io/upload_images/9476896-ff46145c84f2a1a2.png)| ![正交投影](https://upload-images.jianshu.io/upload_images/9476896-cf12901e8f46698a.png) |
-|:-|:-|
+![正交投影](https://upload-images.jianshu.io/upload_images/9476896-ff46145c84f2a1a2.png)
+![正交投影](https://upload-images.jianshu.io/upload_images/9476896-cf12901e8f46698a.png)
+
 这下，我们的网格就变成二维的了。虽然还是可以缩放、旋转和位移，但它被投影到了XY平面上。以上就是一个最基本的正交相机投影。
 >问：为什么颜色会闪烁？   
 答：我们所有的点都被压缩在XY平面，这意味着它们在Z轴上堆叠。而哪个正方体显示在像素顶端则是随机的。
@@ -659,8 +661,9 @@ $
 ```
 和正交投影中点直接向投影平面移动不同，透视投影会朝摄像机的位置（也就是原点）移动，直到它们碰到投影平面为止。当然，这仅对在摄像机之前的点有用。因为我们并没有舍弃掉摄像机后面的点，所以它们将发生错误的投影，所以在位移时要确保点都在摄像机前面。如果没有缩放或旋转网格，距离5就够了。否则，你可能需要离得更远。
 
-| ![透视投影](https://upload-images.jianshu.io/upload_images/9476896-af43df99ea99efc6.png)| ![透视投影](https://upload-images.jianshu.io/upload_images/9476896-89fe14fcb39aad6a.png) |
-|:-|:-|
+![透视投影](https://upload-images.jianshu.io/upload_images/9476896-af43df99ea99efc6.png)
+![透视投影](https://upload-images.jianshu.io/upload_images/9476896-89fe14fcb39aad6a.png)
+
 
 正如照相机的焦距一样，相机到投影平面的距离也对投影有所影响。此值越大，则视场越小。我们现在的焦距为1，是一个90°的视场。让其变得可配置。
 ```
